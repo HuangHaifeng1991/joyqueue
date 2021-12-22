@@ -147,10 +147,12 @@ public class StoreManagement implements StoreManagementService {
         return directory.listFiles();
     }
 
+    @Override
     public long freeSpace() {
         return store.base().getFreeSpace();
     }
 
+    @Override
     public long totalSpace(){
         return store.base().getTotalSpace();
     }

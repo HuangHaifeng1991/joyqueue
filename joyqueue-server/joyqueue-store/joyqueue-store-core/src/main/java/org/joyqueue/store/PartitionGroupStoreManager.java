@@ -1587,6 +1587,7 @@ public class PartitionGroupStoreManager extends Service implements ReplicableSto
         return store.left();
     }
 
+    @Override
     public long rightPosition() {
         return store.right();
     }

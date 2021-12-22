@@ -43,7 +43,9 @@ public class SingleFilePositionStore implements Closeable {
         this.file = file;
         raf = new RandomAccessFile(file, "rws");
         fileChannel = raf.getChannel();
-        if (fileChannel.position() < fileHeaderSize) fileChannel.position(fileHeaderSize);
+        if (fileChannel.position() < fileHeaderSize) {
+            fileChannel.position(fileHeaderSize);
+        }
     }
 
     public synchronized void append(RByteBuffer... rByteBuffers) throws IOException {
